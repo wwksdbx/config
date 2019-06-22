@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Xboot-admin
+  zipkin:
+    base-url: http://localhost:9411
+
+server:
+  port: 8084  #默认端口
+
+management:     #Spring boot admin server 相关配置
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
